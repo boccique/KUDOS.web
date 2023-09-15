@@ -1,8 +1,6 @@
 from django.db import models
 
 
-
-
 class Room(models.Model):
     # host =
     # topic =
@@ -16,5 +14,6 @@ class Room(models.Model):
         return self.name
 
 # class Message(models.Model):
-    # user =
-    # room =
+# user =
+# room =
+# о классах я написал в телеграмме, прочти и продолжи писать код;
