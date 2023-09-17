@@ -1,4 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
+
+
+class Topic(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
 
 
 class Room(models.Model):
@@ -15,7 +23,7 @@ class Room(models.Model):
 
 
 class Message(models.Model):
-    # user =
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     room = models.ForeignKey(Room, on_delete=models.SET_NULL)
     body = models.TextField()
     updated = models.DateField(auto_now=True)
