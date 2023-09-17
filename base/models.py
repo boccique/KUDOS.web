@@ -13,7 +13,13 @@ class Room(models.Model):
     def __str__(self):
         return self.name
 
-# class Message(models.Model):
-# user =
-# room =
-# о классах я написал в телеграмме, прочти и продолжи писать код;
+
+class Message(models.Model):
+    # user =
+    room = models.ForeignKey(Room, on_delete=models.SET_NULL)
+    body = models.TextField()
+    updated = models.DateField(auto_now=True)
+    created = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.body[0:50]
