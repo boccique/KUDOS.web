@@ -19,3 +19,8 @@ def room(request, pk):
     room = Room.objects.get(id=pk)
     contex = {'room': room}
     return render(request, 'base/room.html', contex)
+
+
+def createRoom(request):
+    context = {}
+    return render(request, 'base/room_form.html', context)
