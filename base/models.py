@@ -11,7 +11,7 @@ class Topic(models.Model):
 
 class Room(models.Model):
     # host =
-    # topic =
+    topic = models.ForeignKey(Room, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
     # participants =
