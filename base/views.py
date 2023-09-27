@@ -23,8 +23,12 @@ def loginPage(request):
         except:
             messages.error(request, "User doesn't exist")
 
-        user = authenticate()
+        user = authenticate(request, username=username, password=password)
 
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        
     context = {}
     return render(request, 'base/login_register.html', context)
 
