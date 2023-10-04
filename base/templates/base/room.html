@@ -10,9 +10,9 @@
 
     {% for message in room_messages %}
     <div>
-        <small>@{{message.user}}  {{message.created|timesince}} ago</small>
+        <small>@{{message.user}} {{message.created|timesince}} ago</small>
         <p>{{message.body}}</p>
-    <hr>
+        <hr>
     </div>
     {% endfor %}
 </div>
@@ -22,7 +22,7 @@
     <form method="POST" action="">
         {% csrf_token %}
         <input type="text" name="body" placeholder="Write your message here...">
-        </form>
-{% endif %}
+    </form>
+    {% endif %}
 </div>
 {% endblock %}
