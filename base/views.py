@@ -86,12 +86,12 @@ def room(request, pk):
 
 
     if request.method == "POST":
-        message = Massage.objects.create(
+        message = Message.objects.create(
             user=request.user,
             room=room,
             body=request.POST.get('body')
         )
-
+        return redirect('room', pk=room.id)
 
     contex = {'room': room, 'room_messages': room_messages}
     return render(request, 'base/room.html', contex)
