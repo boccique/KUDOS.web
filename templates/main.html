@@ -12,7 +12,7 @@
 
   <body>
 
-  <!--<script src="script.js"></script>-->
+
   {% include "navbar.html" %}
   {% if messages %}
   <ul class="messages">
@@ -24,5 +24,6 @@
   {% block content %}
 
   {% endblock %}
+  <script src="{% static 'js/script.js'%}"></script>
   </body>
 </html>
