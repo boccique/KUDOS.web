@@ -97,7 +97,7 @@ def room(request, pk):
         return redirect('room', pk=room.id)
 
     contex = {'room': room, 'room_messages': room_messages, 'participants': participants}
-    return render(request, 'base/room.html', contex)
+    return render(request, 'base/room_old.html', contex)
 
 
 def userProfile(request, pk):
